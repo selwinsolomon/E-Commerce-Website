@@ -1,0 +1,144 @@
+.contact-container {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.contact-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    color: #d63384;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 18px;
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #d63384;
+    margin-top: 10px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #f8d7da;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d63384;
+    outline: none;
+    background: #fff0f6;
+}
+
+.contact-form button {
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #c2185b;
+}
+
+.contact-info {
+    max-width: 400px;
+    font-size: 16px;
+    color: #343a40;
+}
+
+.contact-info h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.contact-info h5 {
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+.contact-info .map {
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Floating bakery-themed SVGs */
+.floating-decor {
+    position: absolute;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.cupcake1 {
+    top: 10%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    background: url('/static/images/cupcake.svg') no-repeat center;
+    background-size: contain;
+}
+
+.donut {
+    bottom: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: url('/static/images/donut.svg') no-repeat center;
+    background-size: contain;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

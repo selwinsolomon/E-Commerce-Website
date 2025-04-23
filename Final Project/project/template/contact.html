@@ -1,0 +1,58 @@
+{% extends "home.html" %}
+
+{% block home %}
+
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+     
+
+<div class="floating-decor cupcake1"></div>
+    <div class="floating-decor donut"></div>
+
+    <div class="contact-container">
+        <h1 class="contact-title">Get in Touch 🍩</h1>
+        <p class="contact-subtitle">We’re always baking something new. Say hello!</p>
+
+        {% if success %}
+        <div class="alert alert-success">Thank you for your message! 💌</div>
+        {% endif %}
+
+        <div class="contact-content">
+            <form class="contact-form" method="post" >
+                {% csrf_token %}
+                <label>Name</label>
+                <input type="text" placeholder="Your sweet name" name='name' required>
+
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com" name='email' required>
+
+                <label>Message</label>
+                <textarea rows="5" placeholder="Leave us a delicious message..." name='message' required></textarea>
+
+
+
+                <button type="submit">Send Message 🍰</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Royal Bakery </h3>
+                <h5>📍 Royal Bakery,No:49 Saravanampatti,Coimbatore,Tamil Nadu</h5>
+                <h5>📞 +91 98765 43210</h5>
+                <h5>📧 hello@royalbakery.com</h5>
+
+                <div class="map">
+                    <iframe src="https://maps.google.com/maps?q=bakery%20near%20me&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+      
+     

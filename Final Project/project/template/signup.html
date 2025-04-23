@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign up | Royal Bakery</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head><br>
+<body class="bake-body">
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+
+    <div class="recipe-card">
+     <h1 class="recipe-title">🍰 Bake Your Account</h1>
+        <form id="userInfoForm" method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            
+            <label class="recipe-label">Name Your Cake (Username)</label>
+            <input type="text" class="form-control recipe-input" id="user" name="user" placeholder="Enter your Username" required><br>
+
+            <label class="recipe-label">Secret Ingredient (Password)</label>
+            <input type="password" class="form-control recipe-input" id="PASSWORD" name="PASSWORD" placeholder="Enter your Password" required><br>
+
+            <label class="recipe-label">Taste Test (Repeat Password)</label>
+            <input type="password" class="form-control recipe-input" id="rpass" name="rpass" placeholder="Enter your Re-Password" required><br>
+
+            <label class="recipe-label">Special Note (Email)</label>
+            <input type="email" class="form-control recipe-input" id="epass" name="epass" placeholder="Enter your Email" required><br>
+
+            <button type="submit" class="btn btn-danger w-100 mt-3">🎂 Bake Your Account</button>
+            <p class="text-center mt-2">Already baked? <a href="{% url 'login' %}">Login</a></p>
+        </form>
+    </div>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("userInfoForm");
+            const username = document.getElementById("user");
+            const email = document.getElementById("epass");
+            const password = document.getElementById("PASSWORD");
+            const repeatPassword = document.getElementById("rpass");
+    
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+    
+                // Clear previous errors
+                document.querySelectorAll(".error-message").forEach(msg => msg.remove());
+    
+                let isValid = true;
+    
+                // Helper to show error
+                function showError(input, message) {
+                    const error = document.createElement("span");
+                    error.className = "error-message";
+                    error.style.color = "red";
+                    error.style.fontSize = "0.9em";
+                    error.textContent = message;
+                    input.insertAdjacentElement("afterend", error);
+                }
+    
+                // Username check
+                if (username.value.trim() === "") {
+                    showError(username, "Username is required.");
+                    isValid = false;
+                }
+    
+                // Email check
+                if (email.value.trim() === "") {
+                    showError(email, "Email is required.");
+                    isValid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                    showError(email, "Invalid email format.");
+                    isValid = false;
+                }
+    
+                // Password check
+                if (password.value.trim() === "") {
+                    showError(password, "Password is required.");
+                    isValid = false;
+                } else if (!/(?=.*[A-Za-z])(?=.*\d).{5,}/.test(password.value)) {
+                    showError(password, "Password must be at least 5 characters and include letters and digits.");
+                    isValid = false;
+                }
+    
+                // Repeat password check
+                if (repeatPassword.value.trim() === "") {
+                    showError(repeatPassword, "Repeat password is required.");
+                    isValid = false;
+                } else if (password.value !== repeatPassword.value) {
+                    showError(repeatPassword, "Passwords do not match.");
+                    isValid = false;
+                }
+    
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    form.submit(); // now it submits to Django
+                }
+            });
+        });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const usernameInput = document.getElementById("user");
+    let lastCheckedUsername = "";
+    let usernameTaken = false;
+
+    usernameInput.addEventListener("blur", function () {
+        const username = usernameInput.value.trim();
+
+        if (username !== "" && username !== lastCheckedUsername) {
+            fetch(`/check-username/?username=${encodeURIComponent(username)}`)
+                .then(response => response.json())
+                .then(data => {
+                    lastCheckedUsername = username;
+                    usernameTaken = data.exists;
+
+                    if (usernameTaken) {
+                        alert("Username already taken.");
+                        usernameInput.focus();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error checking username:", error);
+                });
+        }
+    });
+
+    // Optional: Stop form submission if username is taken
+    const form = document.getElementById("userInfoForm");
+    form.addEventListener("submit", function (e) {
+        if (usernameTaken) {
+            e.preventDefault();
+            alert("Please choose a different username.");
+        }
+    });
+});
+</script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+
+
+{% block home %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+      {% load django_bootstrap5 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+
+    <div class="container text-center mt-5">
+        <h2>🎉 Your order has been placed successfully!</h2>
+        <a href="{% url 'product' %}" class="btn btn-success mt-3">Want to order more!</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Royal Bakery</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="login-body">
+
+    <!-- Decorative floating bakery items -->
+<div class="floating-decor cupcake1"></div>
+    <div class="floating-decor whisk"></div>
+
+        <div class="recipe-card">
+            <h1 class="recipe-title">🍰 Return to the Oven</h1>
+            <form id="loginForm" method="POST" action="{% url 'login' %}">
+             {% csrf_token %}
+
+                <label class="recipe-label">Bakery Name (Username)</label>
+                <input type="text" class="form-control recipe-input" id="username" name="username" placeholder="Enter your bakery name" required>
+
+                <label class="recipe-label">Oven Key (Password)</label>
+                <input type="password" class="form-control recipe-input" id="password" name="password" placeholder="Enter your secret oven key" required>
+
+                <button type="submit" class="btn btn-danger w-100 mt-3">🎂 Log In to Bakery</button>
+                <p class="text-center mt-2">New to baking? <a href="{% url 'signup' %}"> Create an account</a></p>
+
+                {% if messages %}
+                    <ul class="mt-2">
+                        {% for message in messages %}
+                            <li class="text-danger">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </form>
+        </div>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("loginForm");
+            const username = document.getElementById("username");
+            const password = document.getElementById("password");
+
+            form.addEventListener("submit", function (e) {
+                let errors = [];
+
+                if (username.value.trim() === "") errors.push("Username is required.");
+                if (password.value.trim() === "") errors.push("Password is required.");
+
+                if (errors.length > 0) {
+                    e.preventDefault();
+                    alert(errors.join("\\n"));
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

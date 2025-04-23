@@ -1,0 +1,64 @@
+{% extends "home.html" %}
+
+
+{% block home %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+      {% load django_bootstrap5 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+
+<div class="home">
+  <h2>//THE BEST BAKERY</h2>
+  <h1>We Bake With Passion </h1>
+  <h3>Welcome to Royal Bakery, where every bite is a celebration of flavor and craftsmanship.Founded in 2025 with a passion for baking and a commitment to quality, we take pride in crafting treats that bring joy to your table. From our signature sourdough bread to our melt-in-your-mouth macarons, every item is baked fresh daily using the finest ingredients and time-honored techniques.
+    At Royal Bakery, we believe that baked goods are more than just food.they’re a way tohare love, create memories, and savor life’s sweetest moments. Whether you’re looking for a custom cake to mark a special occasion or a cozy croissant to brighten your morning, we’re here to make it unforgettable.</h3>
+  </div><br><br>
+
+
+<center><div class="product-container container my-5">
+  <h2 class="section-title text-center mb-4">Our Delicious Products</h2><br>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    <!-- Cake Product -->
+    <div class="col">
+      <div class="product-card card h-100 shadow-sm">
+        <img src="{% static 'image/cake.jpeg' %}" class="product-img card-img-top" alt="Cake">
+        <div class="card-body text">
+          <h4 class="product-title">Cakes</h4>
+          <h5 class="cake-description" >At Royal Bakery, our cakes are crafted with love and the finest ingredients. From classic flavors to custom creations, we make every celebration sweeter.</h5>
+          <a href="{% url 'search' %}?category=cakes" class="product-btn btn btn-outline-primary">Explore Cakes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookies Product -->
+    <div class="col">
+      <div class="product-card card h-100 shadow-sm">
+        <img src="{% static 'image/cookies.jpg' %}" class="product-img card-img-top" alt="Cookies">
+        <div class="card-body text">
+          <h4 class="product-title">Cookies</h4>
+          <h5 class="cake-description">Our cookies are baked to golden perfection, soft in the center, and full of deliciousness. Each bite brings the warmth of home.</h5>
+          <a href="{% url 'search1' %}?category=cookies" class="product-btn btn btn-outline-primary">Explore Cookies</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chaats Product -->
+    <div class="col">
+      <div class="product-card card h-100 shadow-sm">
+        <img src="{% static 'image/chats.jpg' %}" class="product-img card-img-top" alt="Chaats">
+        <div class="card-body text">
+          <h4 class="product-title">Chaats</h4>
+          <h5 class="cake-description">Spice up your cravings with our fresh and flavorful chaats! Bursting with bold spices and tangy twists, it’s street food served with a royal touch.</h5>
+          <a href="{% url 'search2' %}?category=chaats" class="product-btn btn btn-outline-primary">Explore Chaats</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></center>
+
+{% endblock %}
+

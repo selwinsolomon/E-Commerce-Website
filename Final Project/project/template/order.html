@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+
+{% block home %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+      {% load django_bootstrap5 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+
+
+      <div class="container mt-5">
+        <h2 class="text-center mb-4">Place Your Order 🍰</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 p-4 border rounded shadow bg-light">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success w-100 mt-3">Confirm Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+{% endblock %}

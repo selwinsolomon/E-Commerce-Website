@@ -1,0 +1,54 @@
+
+  .h2 {
+    font-family: 'Pacifico', cursive;
+    color: #d36c6c;
+    text-shadow: 1px 1px 1px #ffc3c3;
+  }
+  
+  form {
+    background: #fff8f2;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  form label {
+    font-weight: 600;
+    color: #555;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ffcad4;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  form input:focus,
+  form textarea:focus,
+  form select:focus {
+    outline: none;
+    border-color: #f78fb3;
+    box-shadow: 0 0 8px rgba(255, 173, 196, 0.4);
+  }
+  
+  .btn-primary {
+    background-color: #ff6b81;
+    border: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e05670;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+  }
+  

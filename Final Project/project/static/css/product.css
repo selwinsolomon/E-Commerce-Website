@@ -1,0 +1,123 @@
+
+.home{
+    padding-left: 50px;
+    padding-top: 200px;
+}
+.home>h1{
+    color: rgb(14, 6, 6);
+    font-size: 80px;
+    font-style: italic;
+}
+.home>h2{
+    color: rgb(17, 14, 14);
+}
+.home>h3{
+    color: rgb(226, 47, 77);
+    font-family: cursive;
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
+  body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff7f0;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .section-title {
+      font-family: 'Pacifico', cursive;
+      color: rgb(0, 0, 0);
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 1px 1px 0 #fff2dc;
+  }
+
+  
+  .product-section {
+      padding: 60px 20px;
+      background: linear-gradient(145deg, #fff0f5, #ffe6e6);
+  }
+  
+  .scrolling-wrapper {
+      display: flex;
+      overflow-x: auto;
+      gap: 25px;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE and Edge */
+  }
+  
+  .scrolling-wrapper::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+  }
+  
+  .product-card {
+      flex: 0 0 auto;
+      min-width: 280px;
+      max-width: 280px;
+      border: none;
+      border-radius: 20px;
+      background-color: #fff;
+      scroll-snap-align: start;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+  }
+  
+  .product-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+  }
+  
+  .card-body {
+      padding: 20px;
+      background-color: #fffdfc;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+  }
+  
+  .card-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #8b4513;
+      margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+      color: #5c4b3c;
+      font-size: 0.95rem;
+      line-height: 1.4;
+  }
+  
+  /* Optional: subtle gradient border on hover */
+  .product-card::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #ffcad4, #ffe5b4, #caffbf);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+  }
+  
+  .product-card:hover::after {
+      opacity: 1;
+  }
+  
+  
+  
+

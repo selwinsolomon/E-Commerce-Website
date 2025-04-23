@@ -1,0 +1,346 @@
+/* navbar-starts */
+
+.bakery-navbar {
+    background: linear-gradient(135deg, rgb(235, 124, 142), #ffe4e1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  /* .navbar .container{
+    padding: 10px;
+  } */
+
+  .navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #8b4513 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand img {
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .navbar-nav .nav-link {
+    color: #8b4513 !important;
+    font-weight: 600;
+    padding-right: 15px;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #d2691e !important;
+    text-decoration: underline;
+  }
+
+  .search-bar input[type="search"] {
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: 2px solid #c53d3d;
+  }
+
+  .search-bar button {
+    border-radius: 50px;
+    background-color: #ff6f61;
+    border: 2px solid rgb(24, 4, 4);
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+
+  .search-bar button:hover {
+    background-color: #e85b51;
+  }
+
+/* navbar-ends */
+
+
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fffdf9;
+    margin: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #ffb6b9, #fcd5ce);
+    padding: 5rem 2rem;
+    color: #fff;
+}
+.hero-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+}
+.hero-subtext {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+.hero-btn {
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+}
+
+/* Featured Treats */
+.featured-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+.section-heading {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    display: flex;
+    height: 500px;
+    width: 40px;
+}
+
+
+/* Why Us */
+.why-us-section {
+    background: #ffe5ec;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.why-card {
+    width: 250px;
+}
+
+/* .row img:hover{
+    height: 80px;
+    transform: scale(1.05);
+} */
+
+/* Newsletter */
+.newsletter-section {
+    background: #f8d7da;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.newsletter-form {
+    margin-top: 1rem;
+}
+.newsletter-form input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 30px;
+    margin-right: 1rem;
+    width: 250px;
+}
+.newsletter-form button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    border: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
+.carousel-bg {
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+  border-radius: 0 0 30px 30px;
+}
+
+.bakery-caption {
+  bottom: 25%;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.bakery-caption h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+}
+
+.bakery-caption p {
+  font-size: 1.3rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffb6c1;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.carousel-fade .carousel-item {
+  transition: opacity 1.2s ease-in-out;
+}
+
+
+/* Footer starts */
+footer {
+    background: linear-gradient(135deg, #e7b2ac, rgb(235, 124, 142));
+    padding: 40px 0;
+     display: flex;
+    flex-direction: column; 
+    color: rgb(159, 113, 113);
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+footer h5 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+footer h6 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000000;
+}
+.col-md-4 .text-white{
+    color: #bd5a5a !important;
+}
+footer p {
+    margin: 5px 0;
+    color: rgb(41, 11, 26);
+    display: flex;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: bold;
+    align-items: center;
+    font-style: normal;
+}
+
+footer a {
+    color: rgb(31, 24, 24);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer link list */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    font-style: italic;
+    color: black;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-style: italic !important;
+    color: rgb(165, 32, 32);
+    transition: color 0.3s ease;
+}
+
+.footer-links a {
+    color: rgb(249, 54, 54) !important;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: rgb(120, 0, 0);
+}
+.footer-link{
+    /* color: rgb(106, 161, 80) !important; */
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.footer-link a {
+    color: rgb(0, 0, 0) !important;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-link img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+
+
+/* Footer divider */
+.footer-divider {
+    border-top: 3px solid #966363;
+    margin: 15px 0;
+}
+
+.footer-divider p {
+    margin: 0;
+    color: rgb(151, 27, 27);
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Social media links */
+.social li {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.social img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Responsive text alignment */
+
+/*footer ends*/
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        margin-right: 5px;
+    }
+}
+@media (max-width: 768px) {
+    footer .text-md-left {
+        text-align: center !important;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 20px !important;
+    }
+}
+@media (min-width: 768px) {
+    footer .text-md-left {
+        text-align: center !important;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 10px !important;
+        width: 30% !important;
+    }
+}
